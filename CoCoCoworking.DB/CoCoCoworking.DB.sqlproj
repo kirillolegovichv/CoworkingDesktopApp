@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>CoCoCoworking.DB</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{5d216a7e-62df-44bb-baca-69b52f38f0a7}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath />
+    <RootNamespace>CoCoCoworking.DB</RootNamespace>
+    <AssemblyName>CoCoCoworking.DB</AssemblyName>
+    <ModelCollation>1049,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Cyrillic_General_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Stored Procedures" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\WorkPlace.sql" />
+    <Build Include="dbo\Tables\OrderUnit.sql" />
+    <Build Include="dbo\Tables\AdditionalService.sql" />
+    <Build Include="dbo\Tables\Customer.sql" />
+    <Build Include="dbo\Tables\Order.sql" />
+    <Build Include="dbo\Tables\RentPrice.sql" />
+    <Build Include="dbo\Tables\Room.sql" />
+    <Build Include="Stored Procedures\Order_Add.sql" />
+    <Build Include="Stored Procedures\OrderUnit_Add.sql" />
+    <Build Include="Stored Procedures\Room_GetAll.sql" />
+    <Build Include="Stored Procedures\Room_GetById.sql" />
+    <Build Include="Stored Procedures\Room_Update.sql" />
+    <Build Include="Stored Procedures\Room_Add.sql" />
+    <Build Include="Stored Procedures\Order_GetAll.sql" />
+    <Build Include="Stored Procedures\OrderUnit_GetAll.sql" />
+    <Build Include="Stored Procedures\OrderUnit_GetById.sql" />
+    <Build Include="Stored Procedures\Order_GetById.sql" />
+    <Build Include="Stored Procedures\Order_Update.sql" />
+    <Build Include="Stored Procedures\OrderUnit_Update.sql" />
+    <Build Include="Stored Procedures\Workplace_GetAll.sql" />
+    <Build Include="Stored Procedures\Workplace_GetById.sql" />
+    <Build Include="Stored Procedures\Workplace_Add.sql" />
+    <Build Include="Stored Procedures\Workplace_Update.sql" />
+    <Build Include="Stored Procedures\Customer_Add.sql" />
+    <Build Include="Stored Procedures\Customer_GetAll.sql" />
+    <Build Include="Stored Procedures\Customer_Update.sql" />
+    <Build Include="Stored Procedures\Customer_GetById.sql" />
+    <Build Include="Stored Procedures\RentPrice_Add.sql" />
+    <Build Include="Stored Procedures\RentPrice_GetAll.sql" />
+    <Build Include="Stored Procedures\RentPrice_GetById.sql" />
+    <Build Include="Stored Procedures\RentPrice_Update.sql" />
+    <Build Include="Stored Procedures\RentPrice_SoftDelete.sql" />
+    <Build Include="Stored Procedures\AdditionalService_Add.sql" />
+    <Build Include="Stored Procedures\AdditionalService_GetAll.sql" />
+    <Build Include="Stored Procedures\AdditionalService_GetById.sql" />
+    <Build Include="Stored Procedures\AdditionalService_Update.sql" />
+    <Build Include="Stored Procedures\AdditionalService_SoftDelete.sql" />
+    <Build Include="Stored Procedures\GetAllCustomerWhithOrderWithOrderUnit.sql" />
+    <Build Include="Stored Procedures\GetAllCustomerWithActiveSubscription.sql" />
+    <Build Include="Stored Procedures\GetFinanceReport.sql" />
+    <Build Include="Stored Procedures\GetAllRoomAndWorkPlaceBusyOrFree.sql" />
+    <Build Include="Stored Procedures\GetAllAdditionalService.sql" />
+    <Build Include="Stored Procedures\Order_GetByCustomerId.sql" />
+    <Build Include="Stored Procedures\GetFinanceReportByCustomer.sql" />
+    <Build Include="Stored Procedures\GetAllUnitOrdersFromSpecificOrder.sql" />
+  </ItemGroup>
+</Project>
